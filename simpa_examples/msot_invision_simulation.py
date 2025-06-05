@@ -7,11 +7,12 @@ import simpa as sp
 import numpy as np
 from simpa.utils.profiling import profile
 from argparse import ArgumentParser
+from typing import Union
 
 path_manager = sp.PathManager()
 
 
-def run_msot_invision_simulation(spacing: float | int = 0.5, path_manager=None, visualise: bool = True):
+def run_msot_invision_simulation(spacing: Union[float | int] = 0.5, path_manager=None, visualise: bool = True):
     """
 
     :param spacing: The simulation spacing between voxels

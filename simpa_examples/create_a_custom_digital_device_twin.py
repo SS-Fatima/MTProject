@@ -7,6 +7,7 @@ from simpa import Tags
 from simpa.log import Logger
 from simpa.core.simulation_modules.reconstruction_module.reconstruction_utils import compute_image_dimensions
 import numpy as np
+
 # FIXME temporary workaround for newest Intel architectures
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"

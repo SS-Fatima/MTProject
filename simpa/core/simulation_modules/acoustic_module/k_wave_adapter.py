@@ -165,7 +165,7 @@ class KWaveAdapter(AcousticAdapterBase):
                 simulate_2d = False
         else:
             simulate_2d = False
-
+            
         data_dict[Tags.DATA_FIELD_SPEED_OF_SOUND] = np.ones_like(initial_pressure) * speed_of_sound
         data_dict[Tags.DATA_FIELD_DENSITY] = np.ones_like(initial_pressure) * density
         data_dict[Tags.DATA_FIELD_ALPHA_COEFF] = np.ones_like(initial_pressure) * alpha_coeff
@@ -261,8 +261,8 @@ class KWaveAdapter(AcousticAdapterBase):
 
 def perform_k_wave_acoustic_forward_simulation(initial_pressure: np.array,
                                                detection_geometry: DetectionGeometryBase,
-                                               speed_of_sound: float = 1540.0,
-                                               density: float = 1000.0,
+                                               speed_of_sound: float = 1500.0,
+                                               density: float = 1040.0,
                                                alpha_coeff: float = 0.02,
                                                acoustic_settings: Settings = None,
                                                alpha_power: float = 0.0,

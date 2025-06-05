@@ -34,6 +34,15 @@ def visualise_data(wavelength: int = None,
                    log_scale=False,
                    show_xz_only=False,
                    save_path=None):
+    
+    # Ensure that the data arrays are correctly indexed
+    for i in range(len(data_to_show)):
+        if data_to_show[i].ndim == 2:
+            data = data_to_show[i][:, :].T
+        elif data_to_show[i].ndim == 1:
+            data = data_to_show[i][:]  # Handle 1-dimensional array
+        else:
+            data = data_to_show[i]  # Handle other cases
 
     if settings is not None and Tags.WAVELENGTHS in settings:
         if wavelength is None or wavelength not in settings[Tags.WAVELENGTHS]:

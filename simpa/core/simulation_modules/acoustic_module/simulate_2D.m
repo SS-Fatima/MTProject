@@ -44,14 +44,18 @@ end
 kgrid = kWaveGrid(Nx, dx, Ny, dx);
 
 %% Define medium
-
-% if a field of the struct "data" is given which describes the sound speed, the array is loaded and is used as medium.sound_speed
+if a field of the struct "data" is given which describes the sound speed, the array is loaded and is used as medium.sound_speed
 if isfield(data, 'sos') == true
     medium.sound_speed = data.sos;
     medium.sound_speed = padarray(medium.sound_speed, [GEL_LAYER_HEIGHT 0], 'replicate', 'pre');
 else
     medium.sound_speed = 1540;
 end
+
+% With this:
+% % Force homogeneous speed of sound
+% medium.sound_speed = 1500;
+% medium.sound_speed_ref = 1500;  % Set reference speed to match medium speed
 
 % if a field of the struct "data" is given which describes the attenuation, the array is loaded and is used as medium.alpha_coeff
 if isfield(data, 'alpha_coeff') == true

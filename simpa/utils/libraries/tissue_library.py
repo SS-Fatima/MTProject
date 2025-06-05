@@ -107,7 +107,7 @@ class TissueLibrary(object):
         custom_water.anisotropy_spectrum = AnisotropySpectrumLibrary.CONSTANT_ANISOTROPY_ARBITRARY(
             OpticalTissueProperties.STANDARD_ANISOTROPY - 0.005)
         custom_water.alpha_coefficient = 1.58
-        custom_water.speed_of_sound = StandardProperties.SPEED_OF_SOUND_MUSCLE + 16
+        custom_water.speed_of_sound = StandardProperties.SPEED_OF_SOUND_MUSCLE # + 16
         custom_water.density = StandardProperties.DENSITY_MUSCLE + 41
         custom_water.mus500 = OpticalTissueProperties.MUS500_MUSCLE_TISSUE
         custom_water.b_mie = OpticalTissueProperties.BMIE_MUSCLE_TISSUE

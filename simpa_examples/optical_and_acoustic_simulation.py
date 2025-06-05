@@ -7,6 +7,7 @@ import simpa as sp
 import numpy as np
 from simpa.utils.profiling import profile
 from argparse import ArgumentParser
+from typing import Union
 
 # FIXME temporary workaround for newest Intel architectures
 import os
@@ -17,7 +18,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
 @profile
-def run_optical_and_acoustic_simulation(spacing: float | int = 0.2, path_manager=None,
+def run_optical_and_acoustic_simulation(spacing: Union[float | int] = 0.2, path_manager=None,
                                         visualise: bool = True):
     """
 
@@ -209,7 +210,8 @@ def run_optical_and_acoustic_simulation(spacing: float | int = 0.2, path_manager
                           show_initial_pressure=True,
                           show_reconstructed_data=True,
                           log_scale=False,
-                          show_xz_only=False)
+                          show_xz_only=False,
+                          save_path="Photoacoustic.png")
 
 
 if __name__ == "__main__":

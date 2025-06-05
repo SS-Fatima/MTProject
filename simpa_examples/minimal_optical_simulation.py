@@ -7,6 +7,7 @@ import simpa as sp
 import numpy as np
 from simpa.utils.profiling import profile
 from argparse import ArgumentParser
+from typing import Union
 
 # FIXME temporary workaround for newest Intel architectures
 import os
@@ -17,7 +18,7 @@ os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 
 @profile
-def run_minimal_optical_simulation(spacing: float | int = 0.5, path_manager=None, visualise: bool = True):
+def run_minimal_optical_simulation(spacing: Union[float | int] = 0.5, path_manager=None, visualise: bool = True):
     """
 
     :param spacing: The simulation spacing between voxels
